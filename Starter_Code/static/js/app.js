@@ -22,7 +22,8 @@ function Plots(id) {
         let samples = sampleData.samples;
         let identifier = samples.filter(sample => sample.id === id);
         let filtered = identifier[0];
-        let OTUvalues = filtered.sample_values.slice(0, 10).reverse();
+        // getting the top 10 otu's with sample values, id's, and labels
+        let OTUvalues = filtered.sample_values.slice(0, 10).reverse(); 
         let OTUids = filtered.otu_ids.slice(0, 10).reverse();
         let labels = filtered.otu_labels.slice(0, 10).reverse();
         let barTrace = {
